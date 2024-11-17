@@ -6,14 +6,14 @@
 /*   By: vbronov <vbronov@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:42:20 by vbronov           #+#    #+#             */
-/*   Updated: 2024/11/17 16:19:12 by vbronov          ###   ########.fr       */
+/*   Updated: 2024/11/17 16:30:17 by vbronov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 #include <stdio.h>
 
-void	polish(t_list **list)
+void	cleanse(t_list **list)
 {
 	int		i;
 	int		j;
@@ -135,6 +135,6 @@ char	*get_next_line(int fd)
 	next_line = copy_new_line(list[fd]);
 	if (!next_line)
 		return (free_list(&list[fd], TRUE));
-	polish(&list[fd]);
+	cleanse(&list[fd]);
 	return (next_line);
 }
