@@ -6,12 +6,11 @@
 /*   By: vbronov <vbronov@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:42:20 by vbronov           #+#    #+#             */
-/*   Updated: 2024/11/17 16:30:17 by vbronov          ###   ########.fr       */
+/*   Updated: 2024/12/07 21:19:20 by vbronov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <stdio.h>
 
 void	cleanse(t_list **list)
 {
@@ -118,9 +117,9 @@ int	prepare_next_line(int fd, t_list *list)
 char	*get_next_line(int fd)
 {
 	char				*next_line;
-	static t_list		*list[2048];
+	static t_list		*list[OPEN_MAX];
 
-	if (BUFFER_SIZE <= 0 || fd >= 2048 || fd < 0 || read(fd, &next_line, 0) < 0)
+	if (BUFFER_SIZE <= 0 || fd >= OPEN_MAX || fd < 0 || read(fd, &next_line, 0) < 0)
 	{
 		free_list(&list[fd], TRUE);
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: vbronov <vbronov@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 15:40:04 by vbronov           #+#    #+#             */
-/*   Updated: 2024/11/17 15:48:10 by vbronov          ###   ########.fr       */
+/*   Updated: 2024/12/07 21:18:34 by vbronov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@
 # include <sys/types.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-# endif 
+# endif
+# ifndef OPEN_MAX
+#  define OPEN_MAX 2048
+# endif
 # define FALSE 0
 # define TRUE 1
 
